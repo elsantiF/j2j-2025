@@ -9,16 +9,22 @@ size = Vector2(128, 128)
 [node name="Main" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_0wfyh")]
-position = Vector2(348.25, 345.828)
+position = Vector2(-62.5, 20)
+SPEED = 0.45
 
 [node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(564.5, 572)
+position = Vector2(8.5, 130)
 scale = Vector2(10.4297, 1)
 texture = ExtResource("2_sugp2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Icon"]
+visible = false
 position = Vector2(0.0479469, -3.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
+visible = false
 position = Vector2(-0.0479469, 3.5)
 shape = SubResource("RectangleShape2D_tbgi4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)

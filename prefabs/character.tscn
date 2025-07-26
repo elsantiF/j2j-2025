@@ -4,16 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://bvxl7t5rv4d6p" path="res://sprites/viejo.png" id="2_v5mhf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(34, 84)
+size = Vector2(12, 28)
 
 [node name="Character" type="RigidBody2D"]
 script = ExtResource("1_xofgc")
 
 [node name="Viejo" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
 texture = ExtResource("2_v5mhf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.25, 0.171875)
+[node name="BoxCollider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_jyhfs")

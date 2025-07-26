@@ -24,7 +24,7 @@ func do_flip_sprite() -> void:
 		
 	Sprite.flip_h = true if last_direction < 0 else false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if(ENABLE_MOVEMENT):
 		do_movement()
 		
