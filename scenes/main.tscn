@@ -1,27 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bydxgv7yf8t0c"]
+[gd_scene load_steps=4 format=3 uid="uid://bydxgv7yf8t0c"]
 
-[ext_resource type="Texture2D" uid="uid://bvxl7t5rv4d6p" path="res://sprites/viejo.png" id="1_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://bya4o3etkt2eo" path="res://prefabs/character.tscn" id="1_0wfyh"]
 [ext_resource type="Texture2D" uid="uid://4hdqmcev5tdg" path="res://icon.svg" id="2_sugp2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(34, 84)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tbgi4"]
-size = Vector2(128.096, 128)
+size = Vector2(128, 128)
 
 [node name="Main" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Character" parent="." instance=ExtResource("1_0wfyh")]
 position = Vector2(348.25, 345.828)
-
-[node name="Viejo" type="Sprite2D" parent="RigidBody2D"]
-texture_filter = 1
-scale = Vector2(3, 3)
-texture = ExtResource("1_0wfyh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(-1.25, 0.171875)
-shape = SubResource("RectangleShape2D_jyhfs")
 
 [node name="Icon" type="Sprite2D" parent="."]
 position = Vector2(564.5, 572)
@@ -32,5 +20,5 @@ texture = ExtResource("2_sugp2")
 position = Vector2(0.0479469, -3.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Icon/StaticBody2D"]
-position = Vector2(0, 2.5)
+position = Vector2(-0.0479469, 3.5)
 shape = SubResource("RectangleShape2D_tbgi4")

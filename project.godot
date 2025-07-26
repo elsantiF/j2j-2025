@@ -31,7 +31,9 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://prefabs/": "blue",
 "res://scenes/": "green",
+"res://scripts/": "yellow",
 "res://sprites/": "red"
 }
 
