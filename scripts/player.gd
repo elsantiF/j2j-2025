@@ -1,31 +1,32 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-@export var SPEED: float = 0.75
+@export var SPEED: float = 75.0
+@export var GRAVITY: float = 980.0
 @export var ENABLE_MOVEMENT: bool = true
 
 @onready var Sprite: Sprite2D = $Viejo
-var last_direction: int = -2
+var last_direction: int = 1
 
-func do_movement() -> void:
-	var direction: int = 0
-	
-	if Input.is_key_pressed(KEY_A):
-		direction = -1
-		last_direction = direction
-	elif Input.is_key_pressed(KEY_D):
-		direction = 1
-		last_direction = direction
-		
-	self.translate(Vector2(direction * SPEED, 0))
+func handle_movement() -> void:
+	var direction: float = Input.get_axis("left", "right")
 
-func do_flip_sprite() -> void:
-	if(last_direction == -2):
-		return
-		
+	if direction != 0:
+		velocity.x = direction * SPEED
+		last_direction = int(direction)
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED * 0.5)
+
+func update_sprite_direction() -> void:
 	Sprite.flip_h = true if last_direction < 0 else false
 
-func _process(_delta: float) -> void:
-	if(ENABLE_MOVEMENT):
-		do_movement()
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+
+
+	if ENABLE_MOVEMENT and is_on_floor():
+		handle_movement()
+
+	move_and_slide()
 		
-	do_flip_sprite()
+	update_sprite_direction()
