@@ -17,7 +17,7 @@ func handle_movement() -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED * 0.5)
 
 func update_sprite_direction() -> void:
-	Sprite.flip_h = true if last_direction < 0 else false
+	Sprite.flip_h = last_direction < 0
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -28,5 +28,4 @@ func _physics_process(delta: float) -> void:
 		handle_movement()
 
 	move_and_slide()
-		
 	update_sprite_direction()
