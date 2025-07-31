@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://bya4o3etkt2eo"]
 
 [ext_resource type="Script" uid="uid://c184i16qh50bt" path="res://scripts/player.gd" id="1_xofgc"]
-[ext_resource type="Texture2D" uid="uid://bvxl7t5rv4d6p" path="res://sprites/viejo.png" id="2_v5mhf"]
+[ext_resource type="Texture2D" uid="uid://bogh44k4nh78v" path="res://sprites/senor.png" id="2_xofgc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jyhfs"]
-size = Vector2(12, 28)
+size = Vector2(23, 29)
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_xofgc")
 
 [node name="Viejo" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("2_v5mhf")
+texture = ExtResource("2_xofgc")
 
 [node name="BoxCollider" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_jyhfs")

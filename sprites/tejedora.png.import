@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvxl7t5rv4d6p"
-path="res://.godot/imported/viejo.png-cd5e37e13cd738645ee20dc7ab366eb2.ctex"
+uid="uid://ddxmmavgqr4be"
+path="res://.godot/imported/tejedora.png-2477cce3aa7a4e568ff2ffb0665a8122.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/viejo.png"
-dest_files=["res://.godot/imported/viejo.png-cd5e37e13cd738645ee20dc7ab366eb2.ctex"]
+source_file="res://sprites/tejedora.png"
+dest_files=["res://.godot/imported/tejedora.png-2477cce3aa7a4e568ff2ffb0665a8122.ctex"]
 
 [params]
 
@@ -21,7 +21,7 @@ compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
