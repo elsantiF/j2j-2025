@@ -28,6 +28,10 @@ layout/style_list=[]
 layout/default_style="Default"
 variables={}
 
+[dotnet]
+
+project/assembly_name="j2j-2025"
+
 [editor]
 
 version_control/plugin_name="GitPlugin"
